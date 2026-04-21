@@ -1,0 +1,89 @@
+{
+    "uuid": "5cf67f69-34d0-46fe-b904-20d56248a844",
+    "status": "lead",
+    "startsAt": "2017-07-21T17:32:28Z",
+    "endsAt": "2017-07-21T17:32:28Z",
+    "createdAt": "2017-07-21T17:32:28Z",
+    "updatedAt": "2017-07-21T17:32:28Z",
+    "releasedAt": "2017-07-21T17:32:28Z",
+    "owningOrganization": {
+        "uuid": "2fcc7d41-a72a-4f38-94ff-8a0484b8fc4c",
+        "name": "Good Cause Charity"
+    },
+    "recruitingOrganization": {
+        "uuid": "2fcc7d41-a72a-4f38-94ff-8a0484b8fc4c",
+        "name": "Good Cause Charity"
+    },
+    "recruitingLocationLabel": "Utrecht",
+    "initialDonationAmount": 7.5,
+    "donationAmount": 7.5,
+    "initialDonationInterval": "monthly",
+    "donationInterval": "monthly",
+    "preferredPaymentDay": 13,
+    "person": {
+        "uuid": "82b431f0-f401-4afd-b6db-9d1d751232d9",
+        "academicTitle": "Dr.",
+        "initials": "B.",
+        "firstName": "Beth",
+        "lastNamePrefix": null,
+        "lastName": "Cormier",
+        "dateOfBirth": "1978-05-01",
+        "socialSecurityNumber": "12345678901",
+        "iban": "NL13ABNA6371362585",
+        "address": {
+            "street": "Claudius Prinsenlaan",
+            "houseNumber": "12",
+            "houseNumberExtension": null,
+            "zipCode": "4811DK",
+            "city": "Breda",
+            "country": "NL"
+        },
+        "phoneNumber": "+31208995262",
+        "mobilePhoneNumber": "+31611223344",
+        "email": "development@tapraise.dev",
+        "gender": "male",
+        "optInEmail": true,
+        "optInPhone": false,
+        "optInMail": null,
+        "optInSms": null,
+        "language": "nl",
+        "mandate": {
+            "createdAt": "2017-07-21T17:32:28Z"
+        },
+        "createdAt": "2017-07-21T17:32:28Z",
+    },
+    "recruitmentType": "d2d",
+    "recruiterUser": {
+        "uuid": "83d7638b-ad2b-4d6d-8805-9c4352352599",
+        "identifier": "64271",
+        "name": "John Doe"
+    },
+    "signatureSignedUrl": "https://storage.googleapis.com/test/signature.mp3?GoogleAccessId=service-account%40test.iam.gserviceaccount.com&Expires=1659968507&Signature=",
+    "transactions": [
+        {
+            "uuid": "82b431f0-f401-4afd-b6db-9d1d751232d9",
+            "personUuid": "82b431f0-f401-4afd-b6db-9d1d751232d9",
+            "origin": {
+                "name": "pledgeCase",
+                "identifier": "82b431f0-f401-4afd-b6db-9d1d751232d9"
+            },
+            "amount": 7.5,
+            "name": "Peter Janssen",
+            "iban": "NL91ABNA0417164300",
+            "description": "Bedankt voor uw donatie!",
+            "provider": "cm",
+            "method": "idealqr",
+            "referenceId": "d3f28ffe-9f65-4453-8a61-4ae116b3ff68",
+            "transactionId": "d09c281c-333a-4207-8cce-beeb3facbc41",
+            "providerMetadata": {
+                "key": "value"
+            },
+            "createdAt": "2023-05-01T00:00:00.000Z",
+            "updatedAt": "2023-05-01T00:00:00.000Z",
+            "status": "open"
+        }
+    ],
+    "externalMetadata": {},
+    "campaignCode": "text",
+    "collectionDate": "2017-07-21T17:32:28Z"
+}
