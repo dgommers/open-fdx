@@ -2,7 +2,7 @@
 
 **Open Fundraising Data Exchange — a working group creating open standards for data exchange in the fundraising ecosystem.**
 
-First and foremost, this document outlines the underlying idea and background of this idea. 
+First and foremost, this document just outlines the underlying idea and background of this idea. It's far from ready or finished.
 
 ---
 
