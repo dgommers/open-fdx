@@ -33,7 +33,7 @@ A specification that is both CSV/JSON compatible might be nice so it can be adop
 
 ## Inspiration and examples
 
-Example of TapRaise current API format in [JSON](/examples/tapraise-pledge.json) and [CSV](/examples/tapraise-pledge.csv) based on their existing p[API](https://developer.tapraise.com).
+Example of TapRaise current API format in [JSON](/examples/tapraise-pledge.json) and [CSV](/examples/tapraise-pledge.csv) based on their existing [API](https://developer.tapraise.com).
 
 Here is another example from 2021 with a XLSX file specifying a CSV export with similar fields: [CSV spec 2021.xlsx](/examples/CSV%20spec%202021.xlsx)
 
