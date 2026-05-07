@@ -47,3 +47,22 @@ Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapt
 ```
 
 On CSV level you may specificy the schema per row with a first column called `Schema` or do something [like this](https://pypi.org/project/csv-schema/).
+
+## Conventions
+
+### Versioning
+
+Every payload MUST include `fdxVersion` (semver string) declaring which version of the Open FDX pledge specification it conforms to. Consumers SHOULD reject payloads whose major version they do not support. Minor and patch bumps are additive and safe to ignore.
+
+Producers MAY include `$schema` pointing to the published JSON Schema for the declared version. This lets generic JSON Schema validators check payloads without consumer-specific code.
+
+```json
+{
+  "$schema": "https://openfdx.org/specs/pledges/v0.1.0.json",
+  "fdxVersion": "0.1.0",
+  "uuid": "...",
+  ...
+}
+```
+
+Producers MAY include additional `producerVersion` metadata for their own internal schema evolution alongside `fdxVersion`. The two are independent: `fdxVersion` describes the public contract, `producerVersion` is a producer-internal stamp.
