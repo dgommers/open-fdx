@@ -47,3 +47,46 @@ Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapt
 ```
 
 On CSV level you may specificy the schema per row with a first column called `Schema` or do something [like this](https://pypi.org/project/csv-schema/).
+
+## Conventions
+
+### Structured `recruitingLocation`
+
+The current `recruitingLocationLabel` is a free-text string ("Utrecht"). Modern fundraising platforms capture much richer location data:
+
+- Coordinates (lat/lng) for proximity reporting
+- A stable location identifier (often a geohash) for deduplication and cross-pledge analytics
+- Venue type — public street vs. private booth vs. event venue (regulatory + operational difference)
+- An organization-assigned location reference (the recruiting org's own catalog ID)
+
+Adding a structured `recruitingLocation` object lets producers carry this data through to consumers without flattening to a label string.
+
+```json
+"recruitingLocation": {
+  "locationId": "u173zm",
+  "coordinates": { "lat": 52.0907, "lng": 5.1214 },
+  "type": "booth",
+  "venueType": "public",
+  "organizationLocationId": "loc-utrecht-centraal-2025",
+  "label": "Utrecht Centraal"
+}
+```
+
+Field semantics:
+
+- **`locationId`** (string): producer-stable identifier. Often a geohash (which doubles as both ID and coarse location). Producers SHOULD make this stable across pledges from the same physical location.
+- **`coordinates`** (`{lat, lng}`, WGS84): point coordinates of the recruitment site.
+- **`type`** (string): one of `street`, `booth`, `event`, `door`, `other` — the recruitment setting.
+- **`venueType`** (string): `public` (street, sidewalk) or `private` (event venue, mall, train station with operator permit). Different regulatory regimes apply.
+- **`organizationLocationId`** (string): the recruiting organization's internal location reference. Lets the receiving CRM join against the org's own location catalog without consulting the producer.
+- **`label`** (string): human-readable display label. Equivalent to (and supersedes) `recruitingLocationLabel`.
+
+`recruitmentType` (existing) remains as the high-level recruitment category (`d2d`, `f2f`, `events`, …) and is orthogonal to `recruitingLocation.type`.
+
+### Deprecation of `recruitingLocationLabel`
+
+Producers SHOULD prefer `recruitingLocation.label` over the standalone `recruitingLocationLabel`. To keep this PR backwards-compatible:
+
+- Producers MAY emit both during a transition period
+- When both are present, consumers MUST prefer `recruitingLocation.label`
+- A future minor version will mark `recruitingLocationLabel` deprecated; a future major version will remove it.

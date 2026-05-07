@@ -15,6 +15,14 @@
         "name": "Good Cause Charity"
     },
     "recruitingLocationLabel": "Utrecht",
+    "recruitingLocation": {
+        "locationId": "u173zm",
+        "coordinates": { "lat": 52.0907, "lng": 5.1214 },
+        "type": "booth",
+        "venueType": "public",
+        "organizationLocationId": "loc-utrecht-centraal-2025",
+        "label": "Utrecht Centraal"
+    },
     "initialDonationAmount": 7.5,
     "donationAmount": 7.5,
     "initialDonationInterval": "monthly",
