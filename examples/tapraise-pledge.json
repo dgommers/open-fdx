@@ -59,6 +59,7 @@
         "name": "John Doe"
     },
     "signatureSignedUrl": "https://storage.googleapis.com/test/signature.mp3?GoogleAccessId=service-account%40test.iam.gserviceaccount.com&Expires=1659968507&Signature=",
+    "signatureSignedUrlExpiresAt": "2022-08-08T16:21:47Z",
     "transactions": [
         {
             "uuid": "82b431f0-f401-4afd-b6db-9d1d751232d9",

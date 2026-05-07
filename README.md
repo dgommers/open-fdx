@@ -47,3 +47,22 @@ Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapt
 ```
 
 On CSV level you may specificy the schema per row with a first column called `Schema` or do something [like this](https://pypi.org/project/csv-schema/).
+
+## Conventions
+
+### Signed URLs and delivery modes
+
+Fields ending in `Url` that point to producer-hosted storage (e.g. `signatureSignedUrl`, future fields like `pledgeDocumentUrl`) are typically pre-signed and expire. The pledge format is intended to support both **live API delivery** (consumer pulls and immediately consumes) and **file-based delivery** (batch JSON written to disk, dropped in SFTP, attached to email, archived). These two modes have different expiry implications.
+
+**Live API delivery.** Consumers pulling pledges from a producer endpoint SHOULD fetch referenced assets promptly within the same session. The `*ExpiresAt` companion is OPTIONAL but RECOMMENDED.
+
+**File-based delivery** (batch export, SFTP, email, archive). Producers MUST emit a sibling `*ExpiresAt` (ISO-8601 UTC) for every signed `*Url` field. Consumers MUST check `*ExpiresAt` before fetching and MUST request a re-export from the producer if the URL has expired or will expire before fetch completes. Producers SHOULD set expiry to at least 7 days for file-based delivery. Producers MAY include a buffer (e.g. emit `*ExpiresAt` slightly before actual expiry) to account for clock skew and processing time.
+
+**Field naming convention.** For any signed URL field `xyzUrl`, the expiry sibling MUST be named `xyzUrlExpiresAt`. This consistency lets validators and consumers handle expiry generically without per-field configuration.
+
+```json
+"signatureSignedUrl": "https://storage.googleapis.com/.../signature.mp3?Expires=1659968507&Signature=...",
+"signatureSignedUrlExpiresAt": "2022-08-08T16:21:47Z"
+```
+
+**Recommended long-term mode.** Once producers offer a stable asset-resolution endpoint (e.g. `/assets/{assetId}` with auth handled at fetch time), consumers SHOULD prefer asset identifiers over signed URLs. Identifiers do not expire, do not leak credentials into logs/archives, and survive replay. A future revision of this spec may define the asset-resolution endpoint pattern.
