@@ -1,4 +1,6 @@
 {
+    "$schema": "https://openfdx.org/specs/pledges/v0.1.0.json",
+    "fdxVersion": "0.1.0",
     "uuid": "5cf67f69-34d0-46fe-b904-20d56248a844",
     "status": "lead",
     "startsAt": "2017-07-21T17:32:28Z",
