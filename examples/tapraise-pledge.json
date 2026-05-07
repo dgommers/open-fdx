@@ -59,6 +59,21 @@
         "name": "John Doe"
     },
     "signatureSignedUrl": "https://storage.googleapis.com/test/signature.mp3?GoogleAccessId=service-account%40test.iam.gserviceaccount.com&Expires=1659968507&Signature=",
+    "verificationCall": {
+        "status": "complete",
+        "result": "active",
+        "code": "confirmed",
+        "attempts": 2,
+        "reachedAt": "2017-07-23T14:02:11Z",
+        "completedAt": "2017-07-23T14:09:47Z",
+        "user": {
+            "uuid": "be17a0e2-1d3c-4a98-a2c6-b30a4c1e9123",
+            "identifier": "qa-117",
+            "name": "Sara Müller"
+        },
+        "changedFields": ["iban", "donationAmount"],
+        "comment": "Donor confirmed and corrected IBAN typo."
+    },
     "transactions": [
         {
             "uuid": "82b431f0-f401-4afd-b6db-9d1d751232d9",
