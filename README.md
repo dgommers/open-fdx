@@ -47,3 +47,51 @@ Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapt
 ```
 
 On CSV level you may specificy the schema per row with a first column called `Schema` or do something [like this](https://pypi.org/project/csv-schema/).
+
+## Conventions
+
+### Post-signup fields
+
+The current pledge format covers the moment of signup. In practice, several pieces of state arrive shortly after signup and are commonly exchanged with downstream CRMs as part of the same pledge record:
+
+- The signed pledge document (PDF, alongside the existing audio signature URL)
+- Welcome email / SMS delivery status
+- Donor feedback (rating + comment) from a follow-up survey
+- A photo of the recruiter
+
+Adding these as optional top-level fields keeps the pledge a single self-contained record rather than forcing consumers to stitch state from multiple sources.
+
+#### `pledgeDocumentUrl`
+
+URL to the signed pledge PDF (the signed paper form, signed digital agreement, etc.). Distinct from `signatureSignedUrl` which references the consent audio recording. Same expiry semantics as other signed URLs — emit `pledgeDocumentUrlExpiresAt` for file-based delivery.
+
+#### `welcomeCommunication`
+
+Delivery status of the welcome email and/or SMS sent shortly after signup. Helpful for downstream CRMs to detect undeliverable contact info and flag the donor for follow-up.
+
+```json
+"welcomeCommunication": {
+  "email": { "status": "delivered", "updatedAt": "2017-07-22T08:14:11Z" },
+  "sms":   { "status": "failed",    "updatedAt": "2017-07-22T08:14:11Z" }
+}
+```
+
+`status` SHOULD be one of `pending`, `delivered`, `bounced`, `failed`, `deferred`, `opened`. Either `email` or `sms` MAY be omitted if the producer doesn't operate that channel.
+
+#### `feedback`
+
+Post-signup donor feedback from a follow-up survey or NPS-style prompt.
+
+```json
+"feedback": {
+  "rating": 5,
+  "comment": "Friendly fundraiser, clear explanation",
+  "receivedAt": "2017-07-23T10:02:00Z"
+}
+```
+
+`rating` is a 1–5 integer (NPS-friendly). All fields optional individually.
+
+#### `recruiterUser.photoURL`
+
+Optional photo of the fundraiser who took the pledge. Useful for identification on receipts, fraud-prevention follow-ups, and donor support. Same expiry semantics as other signed URLs if pre-signed.
