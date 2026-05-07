@@ -56,9 +56,20 @@
     "recruiterUser": {
         "uuid": "83d7638b-ad2b-4d6d-8805-9c4352352599",
         "identifier": "64271",
-        "name": "John Doe"
+        "name": "John Doe",
+        "photoURL": "https://storage.googleapis.com/test/recruiter-83d7.jpg?Expires=1659968507&Signature="
     },
     "signatureSignedUrl": "https://storage.googleapis.com/test/signature.mp3?GoogleAccessId=service-account%40test.iam.gserviceaccount.com&Expires=1659968507&Signature=",
+    "pledgeDocumentUrl": "https://storage.googleapis.com/test/pledge-5cf67f69.pdf?Expires=1659968507&Signature=",
+    "welcomeCommunication": {
+        "email": { "status": "delivered", "updatedAt": "2017-07-22T08:14:11Z" },
+        "sms":   { "status": "failed",    "updatedAt": "2017-07-22T08:14:11Z" }
+    },
+    "feedback": {
+        "rating": 5,
+        "comment": "Friendly fundraiser, clear explanation",
+        "receivedAt": "2017-07-23T10:02:00Z"
+    },
     "transactions": [
         {
             "uuid": "82b431f0-f401-4afd-b6db-9d1d751232d9",
