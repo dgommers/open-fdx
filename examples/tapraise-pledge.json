@@ -20,6 +20,19 @@
     "initialDonationInterval": "monthly",
     "donationInterval": "monthly",
     "preferredPaymentDay": 13,
+    "payment": {
+        "method": "sepa",
+        "iban": "NL13ABNA6371362585",
+        "bic": "ABNANL2A",
+        "bankName": "ABN AMRO",
+        "accountHolder": "Beth Cormier",
+        "preferredPaymentDay": 13,
+        "initialDonationAmount": 7.5,
+        "donationAmount": 7.5,
+        "initialDonationInterval": "monthly",
+        "donationInterval": "monthly",
+        "providerSubscriptionId": "sub_1NjHk2XqL5y8ZpQc"
+    },
     "person": {
         "uuid": "82b431f0-f401-4afd-b6db-9d1d751232d9",
         "academicTitle": "Dr.",
