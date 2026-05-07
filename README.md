@@ -47,3 +47,57 @@ Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapt
 ```
 
 On CSV level you may specificy the schema per row with a first column called `Schema` or do something [like this](https://pypi.org/project/csv-schema/).
+
+## Conventions
+
+### `payment` object
+
+Today the spec scatters payment-related data across three locations:
+
+- **Top-level**: `initialDonationAmount`, `donationAmount`, `initialDonationInterval`, `donationInterval`, `preferredPaymentDay`
+- **`person`**: `iban`
+- **Implicit / missing**: payment method (SEPA / card / Stripe / PayPal), BIC, bank name, alternate account holder, processor subscription ID
+
+Mixing donor identity (`person`) with payment instrument (IBAN, account holder) creates two problems:
+
+1. **Conflated semantics.** A donor's IBAN is not part of their identity — it's part of their pledge's payment instruction. The same donor can have multiple pledges with different IBANs (gift to one charity from joint account, gift to another from personal account).
+2. **Real-world fields are missing.** SEPA pledges need BIC + bank name. Stripe-backed pledges need a subscription ID. Today producers stuff these into `externalMetadata`.
+
+Introduce a `payment` object that consolidates donation amount/interval, payment instrument, and processor reference:
+
+```json
+"payment": {
+  "method": "sepa",
+  "iban": "NL13ABNA6371362585",
+  "bic": "ABNANL2A",
+  "bankName": "ABN AMRO",
+  "accountHolder": "Beth Cormier",
+  "preferredPaymentDay": 13,
+  "initialDonationAmount": 7.5,
+  "donationAmount": 7.5,
+  "initialDonationInterval": "monthly",
+  "donationInterval": "monthly",
+  "providerSubscriptionId": "sub_1NjHk2XqL..."
+}
+```
+
+### Field semantics
+
+- **`method`** (string): `sepa`, `card`, `stripe`, `paypal`, `bank_transfer`, `other`. Producers SHOULD document which methods they emit.
+- **`iban`**: moved from `person.iban`. The IBAN is a payment instrument, not donor identity.
+- **`bic`**, **`bankName`**: SEPA-mainstream fields, useful even outside DACH/NL.
+- **`accountHolder`**: used when the payer differs from the donor (third-party gifts, joint accounts).
+- **`preferredPaymentDay`**: moved from top-level (1–28 day-of-month for direct debit cycles).
+- **`initialDonationAmount`** / **`donationAmount`** / **`initialDonationInterval`** / **`donationInterval`**: moved from top-level. Same semantics.
+- **`providerSubscriptionId`**: opaque reference to the producer's payment processor (Stripe subscription ID, PayPal billing agreement ID, SEPA mandate reference, etc.). Lets receiving CRMs reconcile against the processor without producer-specific keys.
+
+### Backwards-compatible migration
+
+This is the most invasive change in the proposal stack — it moves existing top-level and `person` fields. To avoid a hard break:
+
+- Producers MAY emit both the new `payment` object AND the legacy flat fields during a transition period
+- When both are present, consumers MUST prefer values inside `payment`
+- A future minor version will mark the legacy flat fields deprecated
+- A future MAJOR version (declared via `fdxVersion: "2.0.0"` per the versioning convention) will remove the legacy fields
+
+Producers may begin emitting `payment` immediately without breaking any current consumer.
