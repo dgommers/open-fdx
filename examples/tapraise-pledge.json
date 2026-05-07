@@ -8,7 +8,13 @@
     "releasedAt": "2017-07-21T17:32:28Z",
     "owningOrganization": {
         "uuid": "2fcc7d41-a72a-4f38-94ff-8a0484b8fc4c",
-        "name": "Good Cause Charity"
+        "name": "Good Cause Charity",
+        "shortName": "GCC",
+        "subOrganization": {
+            "uuid": "9b0d4d6c-2a9f-4f1f-8b3e-6e2f3a8c1234",
+            "name": "Good Cause Charity – Utrecht Chapter",
+            "shortName": "GCC Utrecht"
+        }
     },
     "recruitingOrganization": {
         "uuid": "2fcc7d41-a72a-4f38-94ff-8a0484b8fc4c",

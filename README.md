@@ -47,3 +47,26 @@ Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapt
 ```
 
 On CSV level you may specificy the schema per row with a first column called `Schema` or do something [like this](https://pypi.org/project/csv-schema/).
+
+## Conventions
+
+### Organization hierarchy
+
+Many NGOs are organized in tiers — a national entity owns regional chapters, regional chapters own local groups. The current `owningOrganization` only models a single tier, forcing producers to flatten chapter information into the name string or into `externalMetadata`.
+
+Add an optional nested `subOrganization` to capture one tier below the owning organization:
+
+```json
+"owningOrganization": {
+  "uuid": "2fcc7d41-a72a-4f38-94ff-8a0484b8fc4c",
+  "name": "Good Cause Charity",
+  "subOrganization": {
+    "uuid": "9b0d-...",
+    "name": "Good Cause Charity – Utrecht Chapter"
+  }
+}
+```
+
+Producers MAY also include a `shortName` on `owningOrganization` and on `subOrganization` for compact display (receipts, lists, narrow UI columns).
+
+`subOrganization` represents a chapter / region / local group — the tier the donor's pledge is assigned to operationally, where `owningOrganization` is the legal/national entity. Producers SHOULD omit `subOrganization` when the org has no sub-tier rather than emit an empty placeholder.
