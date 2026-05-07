@@ -47,3 +47,47 @@ Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapt
 ```
 
 On CSV level you may specificy the schema per row with a first column called `Schema` or do something [like this](https://pypi.org/project/csv-schema/).
+
+## Conventions
+
+### `verificationCall` (welcome / quality-assurance call)
+
+After a face-to-face signup, most professional fundraising operations make a follow-up phone call to verify the donor's commitment, correct any data-entry errors, and confirm consent. The outcome of this call is a critical data point downstream:
+
+- Did the donor confirm the pledge, or cancel?
+- How many attempts were needed to reach them?
+- Did any pledge fields change during the call (e.g. corrected IBAN, adjusted amount)?
+- Who made the call?
+
+Today producers exchange this in bespoke shapes (we call it `preDebitCallReport`, others call it `qaCall`, `welcomeCall`, etc.). A standardized `verificationCall` object makes this interoperable.
+
+```json
+"verificationCall": {
+  "status": "complete",
+  "result": "active",
+  "code": "confirmed",
+  "attempts": 2,
+  "reachedAt": "2017-07-23T14:02:11Z",
+  "completedAt": "2017-07-23T14:09:47Z",
+  "user": {
+    "uuid": "...",
+    "identifier": "qa-117",
+    "name": "Sara Müller"
+  },
+  "changedFields": ["iban", "donationAmount"],
+  "comment": "Donor confirmed and corrected IBAN typo."
+}
+```
+
+Field semantics:
+
+- `status` (required): `pending`, `in_progress`, `complete`. Lifecycle of the call workflow.
+- `result` (required when `status: "complete"`): `active`, `canceled`, `unreachable`. The business outcome.
+- `code` (optional): producer-specific outcome code for finer-grained reporting (e.g. `confirmed`, `wrong_number`, `donor_changed_mind`). Producers SHOULD document their codes.
+- `attempts` (integer): how many call attempts were made.
+- `reachedAt` / `completedAt` (ISO-8601): timestamps. Both optional.
+- `user`: the agent who completed the call, same shape as `recruiterUser`.
+- `changedFields` (string array): names of pledge fields that were changed during the call. Lets consumers diff against signup state.
+- `comment` (string): free-text note from the agent.
+
+The whole object is OPTIONAL — not all producers run verification calls.
