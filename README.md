@@ -47,3 +47,23 @@ Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapt
 ```
 
 On CSV level you may specificy the schema per row with a first column called `Schema` or do something [like this](https://pypi.org/project/csv-schema/).
+
+## Conventions
+
+### Pledge identifiers
+
+A pledge has three independent identifier dimensions. Mixing them into a single field makes downstream tooling (CRMs, receipts, barcodes) brittle.
+
+- **`uuid`** — globally unique machine identity. Stable, never re-used. Already part of the spec.
+- **`pledgeNumber`** (string) — human-readable, sequential, printed on paperwork or scanned via barcode. Like an invoice number or order number. Producers SHOULD make this short enough for a barcode (e.g. a zero-padded counter, optionally prefixed). Uniqueness scope is producer-defined (typically per producer or per campaign).
+- **`formTemplateId`** (string) — identifies which form template / configuration produced the pledge. Lets consumers group pledges by form variant for analytics or version-aware ingestion. The `uuid` identifies the pledge itself; `formTemplateId` identifies the form schema used to collect it.
+
+```json
+{
+  "uuid": "5cf67f69-34d0-46fe-b904-20d56248a844",
+  "pledgeNumber": "00012345",
+  "formTemplateId": "fc-2025-q2-streetTeam"
+}
+```
+
+`campaignCode` (existing) remains the right field for campaign / action codes — orthogonal to the three above.
