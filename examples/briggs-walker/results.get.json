@@ -1,0 +1,37 @@
+{
+    "results": [
+        {
+            "id": "res_8f9f7a3d2b",
+            "status": "accepted",
+            "donationDate": "2026-05-01",
+            "amount": 25.00,
+            "currency": "EUR",
+            "frequency": "monthly",
+            "campaign": {
+                "id": "cmp_spring_appeal",
+                "name": "Spring Appeal"
+            },
+            "supporter": {
+                "id": "sup_4738",
+                "firstName": "Alex",
+                "lastName": "Jansen",
+                "email": "alex.jansen@example.org",
+                "postalCode": "1012AB",
+                "country": "NL"
+            },
+            "payment": {
+                "method": "direct_debit",
+                "iban": "NL13ABNA6371362585",
+                "mandateReference": "MND-2026-004738"
+            },
+            "createdAt": "2026-05-01T12:15:30Z",
+            "updatedAt": "2026-05-01T12:16:02Z"
+        }
+    ],
+    "pagination": {
+        "count": 1,
+        "limit": 100,
+        "offset": 0,
+        "hasNext": false
+    }
+}

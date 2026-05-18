@@ -37,6 +37,8 @@ Example of TapRaise current API format in [JSON](/examples/tapraise-pledge.json)
 
 Here is another example from 2021 with a XLSX file specifying a CSV export with similar fields: [CSV spec 2021.xlsx](/examples/CSV%20spec%202021.xlsx)
 
+Briggs + Walker `results.get` examples in [JSON](/examples/briggs-walker/results.get.json) and [CSV](/examples/briggs-walker/results.get.csv), based on their [API docs](https://api.briggs-walker.com/docs/api#/operations/results.get).
+
 Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapted to simplify implementation and validation of standards:
 ```json
 {  

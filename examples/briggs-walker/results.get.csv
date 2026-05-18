@@ -1,0 +1,2 @@
+id,status,donationDate,amount,currency,frequency,campaign.id,campaign.name,supporter.id,supporter.firstName,supporter.lastName,supporter.email,supporter.postalCode,supporter.country,payment.method,payment.iban,payment.mandateReference,createdAt,updatedAt
+res_8f9f7a3d2b,accepted,2026-05-01,25.00,EUR,monthly,cmp_spring_appeal,Spring Appeal,sup_4738,Alex,Jansen,alex.jansen@example.org,1012AB,NL,direct_debit,NL13ABNA6371362585,MND-2026-004738,2026-05-01T12:15:30Z,2026-05-01T12:16:02Z
