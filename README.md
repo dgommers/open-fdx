@@ -12,15 +12,15 @@ NGOs work with multiple systems — CRM, payment processor, email platform, fund
 
 ## Vision
 
-Open FDX is a working group of fundraising vendors, CRM providers, and NGOs that publishes open and vendor-neutral standards to exchange donor/pledge data. This working group may create several standard over time; each can be adopted independently. 
+Open FDX is a working group of fundraising vendors, CRM providers, and NGOs that publishes open and vendor-neutral standards to exchange donor/pledge data. This working group may create several standard over time; each can be adopted independently.
 
-The idea is that associated vendors implement the Open FDX standards in their systems and offer this to their customers. As the initiative and it's standard evolves vendors will adopt them in X period to ensure systems can keep operating. 
+The idea is that associated vendors implement the Open FDX standards in their systems and offer this to their customers. As the initiative and it's standard evolves vendors will adopt them in X period to ensure systems can keep operating.
 
-The format is easy to understand and adapt, but also leaves room for extension and customization. 
+The format is easy to understand and adapt, but also leaves room for extension and customization.
 
 ## First use case: New Pledge
 
-The first standard covers the **new pledge** — the moment a donor commits to a gift and that commitment needs to pass reliably between systems. This standard can be used to export it from vendors to CRM partners as new pledges. 
+The first standard covers the **new pledge** — the moment a donor commits to a gift and that commitment needs to pass reliably between systems. This standard can be used to export it from vendors to CRM partners as new pledges.
 
 - A JSON or CSV representation of a pledge at creation: amount, currency, frequency, start date, payment method, fund, and donor profile.
 - Files are easy to read and indicate the Open FDX specification to allow for compatibility checks and multiple standards in the future.
@@ -33,15 +33,15 @@ A specification that is both CSV/JSON compatible might be nice so it can be adop
 
 ## Inspiration and examples
 
-Example of TapRaise current API format in [JSON](/examples/tapraise-pledge.json) and [CSV](/examples/tapraise-pledge.csv) based on their existing [API](https://developer.tapraise.com).
+Example of TapRaise current API format in [JSON](/examples/tapraise/tapraise-pledge.json) and [CSV](/examples/tapraise/tapraise-pledge.csv) based on their existing [API](https://developer.tapraise.com).
 
-Here is another example from 2021 with a XLSX file specifying a CSV export with similar fields: [CSV spec 2021.xlsx](/examples/CSV%20spec%202021.xlsx)
+Here is another example from 2021 with a XLSX file specifying a CSV export with similar fields: [tapraise-pledge.xlsx](/examples/tapraise/tapraise-pledge.xlsx)
 
 Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapted to simplify implementation and validation of standards:
 ```json
-{  
-    "$schema": "https://json-schema.org/draft/2020-12/schema",  
-    "$id": "https://openfdx.org/specs/pledges",  
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://openfdx.org/specs/pledges",
     "nodes": [....]
 }
 ```
