@@ -1,128 +1,123 @@
 {
-  "totalCount": 1,
-  "count": 1,
-  "limit": 10000,
-  "nextStartAfter": "AP00001",
-  "supporters": [
-    {
-      "id": "abc123XYZ",
-      "version": "2",
-      "formNumber": 1,
-      "formCode": "AP00001",
-      "actionCode": "STREET-2026-SPRING",
-      "providerId": "provider-co-456",
-      "providerName": "Acme Fundraising GmbH",
-      "orgCompanyId": "org-co-789",
-      "orgCompanyName": "Good Cause Charity e.V.",
-      "orgCompanyNameShort": "GCC",
-      "mandateId": "org-co-789_provider-co-456",
-      "subOrganizationId": "sub-org-1",
-      "businessUnit": "Street",
-      "timestamp": "2026-05-19T14:23:11+02:00",
-      "date": "2026-05-19",
-      "firstName": "Beth",
-      "lastName": "Cormier",
-      "salutation": "FEMALE",
-      "dateOfBirth": "1978-05-01",
-      "ageWhenSigned": 48,
-      "street": "Claudius Prinsenlaan",
-      "number": "12",
-      "postalCode": "4811DK",
+  "id": "abc123XYZ",
+  "version": "2",
+  "formNumber": 1,
+  "formCode": "AP00001",
+  "actionCode": "STREET-2026-SPRING",
+  "providerId": "provider-co-456",
+  "providerName": "Acme Fundraising GmbH",
+  "orgCompanyId": "org-co-789",
+  "orgCompanyName": "Good Cause Charity e.V.",
+  "orgCompanyNameShort": "GCC",
+  "mandateId": "org-co-789_provider-co-456",
+  "subOrganizationId": "sub-org-1",
+  "businessUnit": "Street",
+  "timestamp": "2026-05-19T14:23:11+02:00",
+  "date": "2026-05-19",
+  "firstName": "Beth",
+  "lastName": "Cormier",
+  "salutation": "FEMALE",
+  "dateOfBirth": "1978-05-01",
+  "ageWhenSigned": 48,
+  "street": "Claudius Prinsenlaan",
+  "number": "12",
+  "postalCode": "4811DK",
+  "city": "Breda",
+  "country": "NL",
+  "email": "beth.cormier@example.com",
+  "phoneNumber": "+31611223344",
+  "iban": "NL13ABNA6371362585",
+  "bic": "ABNANL2A",
+  "bankName": "ABN AMRO",
+  "accountHolder": "Beth Cormier",
+  "interval": "MONTHLY",
+  "supportType": "Regular Donation",
+  "amountPerPayment": 15,
+  "amountPerYear": 180,
+  "unionSalary": 3200,
+  "occupation": "EMPLOYED",
+  "emailContactAgreed": true,
+  "phoneContactAgreed": false,
+  "magazineAgreed": true,
+  "donationReceipt": true,
+  "approach": "INFORMAL",
+  "comment": "Met fundraiser at central station, very interested in education projects.",
+  "preDebitCallReport": {
+    "status": "COMPLETE",
+    "result": "ACTIVE",
+    "code": "CONFIRMED",
+    "callAttempts": 2,
+    "date": "2026-05-21",
+    "comment": "Amount: 120 -> 180, Interval: Yearly -> Monthly",
+    "changedFields": [
+      "amountPerYear",
+      "interval"
+    ]
+  },
+  "attritionReport": {
+    "status": "ACTIVE"
+  },
+  "retentionStatus": "ACTIVE",
+  "fundraiser": {
+    "displayName": "John Doe",
+    "frCode": "FR-0421",
+    "photoURL": "https://storage.googleapis.com/example/fundraisers/john-doe.jpg",
+    "userId": "user-john-doe"
+  },
+  "teamlead": {
+    "displayName": "Jane Smith",
+    "photoURL": "https://storage.googleapis.com/example/teamleads/jane-smith.jpg",
+    "userId": "user-jane-smith"
+  },
+  "conversionLocationAddress": "Stationsplein 1, 4811 BB Breda, Netherlands",
+  "conversionLocationState": "Noord-Brabant",
+  "conversionLocationPostalCode": "4811BB",
+  "conversionLocation": {
+    "lat": 51.5953,
+    "lng": 4.7794
+  },
+  "checkInLocation": {
+    "location": {
+      "lat": 51.5953,
+      "lng": 4.7794
+    },
+    "address": {
+      "street": "Stationsplein",
+      "streetNo": "1",
+      "address": "Stationsplein 1, 4811 BB Breda, Netherlands",
+      "postalCode": "4811BB",
       "city": "Breda",
       "country": "NL",
-      "email": "beth.cormier@example.com",
-      "phoneNumber": "+31611223344",
-      "iban": "NL13ABNA6371362585",
-      "bic": "ABNANL2A",
-      "bankName": "ABN AMRO",
-      "accountHolder": "Beth Cormier",
-      "interval": "MONTHLY",
-      "supportType": "Regular Donation",
-      "amountPerPayment": 15,
-      "amountPerYear": 180,
-      "unionSalary": 3200,
-      "occupation": "EMPLOYED",
-      "emailContactAgreed": true,
-      "phoneContactAgreed": false,
-      "magazineAgreed": true,
-      "donationReceipt": true,
-      "approach": "INFORMAL",
-      "comment": "Met fundraiser at central station, very interested in education projects.",
-      "preDebitCallReport": {
-        "status": "COMPLETE",
-        "result": "ACTIVE",
-        "code": "CONFIRMED",
-        "callAttempts": 2,
-        "date": "2026-05-21",
-        "comment": "Amount: 120 -> 180, Interval: Yearly -> Monthly",
-        "changedFields": ["amountPerYear", "interval"]
-      },
-      "attritionReport": {
-        "status": "ACTIVE"
-      },
-      "retentionStatus": "ACTIVE",
-      "fundraiser": {
-        "displayName": "John Doe",
-        "frCode": "FR-0421",
-        "photoURL": "https://storage.googleapis.com/example/fundraisers/john-doe.jpg",
-        "userId": "user-john-doe"
-      },
-      "teamlead": {
-        "displayName": "Jane Smith",
-        "photoURL": "https://storage.googleapis.com/example/teamleads/jane-smith.jpg",
-        "userId": "user-jane-smith"
-      },
-      "conversionLocationAddress": "Stationsplein 1, 4811 BB Breda, Netherlands",
-      "conversionLocationState": "Noord-Brabant",
-      "conversionLocationPostalCode": "4811BB",
-      "conversionLocation": {
-        "lat": 51.5953,
-        "lng": 4.7794
-      },
-      "checkInLocation": {
-        "location": {
-          "lat": 51.5953,
-          "lng": 4.7794
-        },
-        "address": {
-          "street": "Stationsplein",
-          "streetNo": "1",
-          "address": "Stationsplein 1, 4811 BB Breda, Netherlands",
-          "postalCode": "4811BB",
-          "city": "Breda",
-          "country": "NL",
-          "state": "Noord-Brabant"
-        },
-        "customLocationId": "loc-breda-cs",
-        "type": "GEOHASH",
-        "privateVenue": false,
-        "locationType": "BOOTH"
-      },
-      "signatureLocation": {
-        "location": {
-          "lat": 51.5953,
-          "lng": 4.7794
-        },
-        "address": {
-          "street": "Stationsplein",
-          "streetNo": "1",
-          "address": "Stationsplein 1, 4811 BB Breda, Netherlands",
-          "postalCode": "4811BB",
-          "city": "Breda",
-          "country": "NL",
-          "state": "Noord-Brabant"
-        }
-      },
-      "custom": {
-        "campaignCode": "SPRING26",
-        "sourceCode": "STR-NL-001",
-        "referrerEmail": "alice.donor@example.com"
-      },
-      "welcomeMailDeliveryStatus": "DELIVERED",
-      "welcomeMailDeliveryStatusUpdatedAt": "2026-05-19T14:25:02+02:00",
-      "feedbackRating": 5,
-      "feedbackComment": "Great conversation, felt informed and not pressured.",
-      "feedbackReceivedAt": "2026-05-20T09:11:42+02:00"
+      "state": "Noord-Brabant"
+    },
+    "customLocationId": "loc-breda-cs",
+    "type": "GEOHASH",
+    "privateVenue": false,
+    "locationType": "BOOTH"
+  },
+  "signatureLocation": {
+    "location": {
+      "lat": 51.5953,
+      "lng": 4.7794
+    },
+    "address": {
+      "street": "Stationsplein",
+      "streetNo": "1",
+      "address": "Stationsplein 1, 4811 BB Breda, Netherlands",
+      "postalCode": "4811BB",
+      "city": "Breda",
+      "country": "NL",
+      "state": "Noord-Brabant"
     }
-  ]
+  },
+  "custom": {
+    "campaignCode": "SPRING26",
+    "sourceCode": "STR-NL-001",
+    "referrerEmail": "alice.donor@example.com"
+  },
+  "welcomeMailDeliveryStatus": "DELIVERED",
+  "welcomeMailDeliveryStatusUpdatedAt": "2026-05-19T14:25:02+02:00",
+  "feedbackRating": 5,
+  "feedbackComment": "Great conversation, felt informed and not pressured.",
+  "feedbackReceivedAt": "2026-05-20T09:11:42+02:00"
 }
