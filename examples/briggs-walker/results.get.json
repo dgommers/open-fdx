@@ -1,37 +1,54 @@
-{
-    "results": [
-        {
-            "id": "res_8f9f7a3d2b",
-            "status": "accepted",
-            "donationDate": "2026-05-01",
-            "amount": 25.00,
-            "currency": "EUR",
-            "frequency": "monthly",
-            "campaign": {
-                "id": "cmp_spring_appeal",
-                "name": "Spring Appeal"
-            },
-            "supporter": {
-                "id": "sup_4738",
-                "firstName": "Alex",
-                "lastName": "Jansen",
-                "email": "alex.jansen@example.org",
-                "postalCode": "1012AB",
-                "country": "NL"
-            },
-            "payment": {
-                "method": "direct_debit",
-                "iban": "NL13ABNA6371362585",
-                "mandateReference": "MND-2026-004738"
-            },
-            "createdAt": "2026-05-01T12:15:30Z",
-            "updatedAt": "2026-05-01T12:16:02Z"
-        }
-    ],
-    "pagination": {
-        "count": 1,
-        "limit": 100,
-        "offset": 0,
-        "hasNext": false
+[
+    {
+        "resultid": 62461385725709,
+        "updated_at": "2019-01-26 10:50:06",
+        "created_at": "2019-01-26 09:00:08",
+        "teamdate": "2019-01-26 00:00:00",
+        "officecode": "Haarlem",
+        "projectcode": "BW-STR",
+        "crewcode": "WERVER01",
+        "crewname": "Frits de Werver",
+        "locationname": "HAARLEM Spaarne 66",
+        "description_project_result": "Inschrijving",
+        "form_type": "Form",
+        "lastupdate": "2019-01-26 08:59:16",
+        "latitude": "52.3771925",
+        "longitude": "4.6380664",
+        "agencycode": "PTNI",
+        "accountcode": "DEMO",
+        "saleschannel": "Street - DEMO",
+        "status": "Pending",
+        "contacttimestamp": 85725709,
+        "accountdomain": "BW",
+        "connection": "Online",
+        "in_quality_control": "No",
+        "quality_control_done": "No",
+        "from_working_stock": "Yes",
+        "answers": {
+            "product-property-1": "maandag t/m zaterdag",
+            "gender": "M",
+            "product-property-2": "2 jaar",
+            "initials": "T.",
+            "product-property-3": "€ 18,90 per maand",
+            "first-name": "Toon",
+            "infix": "het",
+            "product": "6526T",
+            "TalkedTo": "Frits",
+            "signature-city": "HAARLEM",
+            "start-date": "05-02-2019",
+            "last-name": "Testabonnement",
+            "opt-in": "No",
+            "date-of-birth": "25-01-2000",
+            "mobile": "0612345678",
+            "zipcode": "2011 ND",
+            "bank-account-number": "NL28INGB0000000001",
+            "e-mail": "email@domain.com",
+            "address-number": "45",
+            "field - checkbox bankpas": "No",
+            "number-suffix": "",
+            "address-line": "Nieuwe Gracht",
+            "city": "HAARLEM"
+        },
+        "id": "5a6ae008c56fc90e8f26d692"
     }
-}
+]
