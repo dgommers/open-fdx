@@ -35,6 +35,8 @@ A specification that is both CSV/JSON compatible might be nice so it can be adop
 
 Example of TapRaise current API format in [JSON](/examples/tapraise-pledge.json) and [CSV](/examples/tapraise-pledge.csv) based on their existing [API](https://developer.tapraise.com).
 
+Example of Signature's current API format in [JSON](/examples/signature-supporter.json) based on the supporters endpoint of their [API](https://signatureapp.de/api/docs).
+
 Here is another example from 2021 with a XLSX file specifying a CSV export with similar fields: [CSV spec 2021.xlsx](/examples/CSV%20spec%202021.xlsx)
 
 Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapted to simplify implementation and validation of standards:
