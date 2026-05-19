@@ -1,0 +1,10 @@
+{
+    "$schema": "https://openfdx.org/specs/v1/pledges.json",
+    "fdxVersion": "v1.0.0",
+    "pledges": [
+        {
+            "uid": "tapraise-nl:5cf67f69-34d0-46fe-b904-20d56248a844", // required, globally unique, prefixed when source uses incremental ids
+            "referenceNumber": "PLEDGE-001", // required, human-readable reference
+        }
+    ]
+}

@@ -49,3 +49,9 @@ Existing concepts such as [JSON Schema](https://json-schema.org/) could be adapt
 ```
 
 On CSV level you may specificy the schema per row with a first column called `Schema` or do something [like this](https://pypi.org/project/csv-schema/).
+
+
+## Working Agreements
+
+- We use camel case for naming.
+- We use `uid` for identifiers, so these can be id's, uuids or other type of unique identifiers. If providers use incremental `id` they shall be prefixed to ensure they are still unique. For example `tapraise-nl:3221`.
